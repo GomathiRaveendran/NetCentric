@@ -17,33 +17,32 @@
     </header>
     
 
-
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom mb-2">
-      <a class="navbar-brand " href="index.html" style="font-family: fantasy;">ABC</a>
+      <a class="navbar-brand " href="http://localhost:1212/" style="font-family: fantasy;">ABC</a>
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home<span class="sr-only"></a>
+              <a class="nav-link" href="http://localhost:1212/">Home<span class="sr-only"></a>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="modify.html">Tour Packages<span class="sr-only"></a>
+            <a class="nav-link" href="http://localhost:1212/managerpanel">Tour Packages<span class="sr-only"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="addpackage.html">Add Package (Managers)</a>
+            <a class="nav-link" href="http://localhost:1212/addpackage">Add Package (Managers)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="indian.html">Domestic Tour Packages</a>
+            <a class="nav-link" href="http://localhost:1212/domestic">Domestic Tour Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="international.html">International Tour Packages</a>
+            <a class="nav-link" href="http://localhost:1212/international">International Tour Packages</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="book.html">Book A Trip</a>
+              <a class="nav-link" href="http://localhost:1212/bookticket">Book A Trip</a>
             </li>
           
           <li class="nav-item">
-              <a class="nav-link" href="feedback.html">Feedback</a>
+              <a class="nav-link" href="http://localhost:1212/feedback">Feedback</a>
             </li>
 
         </ul>
@@ -51,10 +50,10 @@
         <div class="my-2 my-lg-0">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                  <a class="nav-link" href="login.html">Login<span class="sr-only"></a>
+                  <a class="nav-link" href="http://localhost:1212/login">Login<span class="sr-only"></a>
                 </li>    
                 <li class="nav-item">
-                  <a class="nav-link" href="signup.html">Sign Up<span class="sr-only"></a>
+                  <a class="nav-link" href="http://localhost:1212/signup">Sign Up<span class="sr-only"></a>
                 </li>  
             </ul>
         </div>
@@ -69,65 +68,65 @@
       <small class="form-text text-muted" style="text-align: center;">This page is only for managers</small>
 
       <label for="dt">Starting Date:</label>
-        <input type="date" class="form-control" id="start_date" name="start_date" ng-model="package.start_date">
+        <input type="date" class="form-control" id="start_date" name="start_date" ng-model="package.start_date" required>
         <br>
 
       <label for="dt">Starting Time:</label>
-        <input type="time" class="form-control" id="start_time" name="start_time" value="00:00" ng-model="package.start_time">
+        <input type="time" class="form-control" id="start_time" name="start_time" value="00:00" ng-model="package.start_time" required>
       <br>
 
       <label for="dt">Ending Date:</label>
-        <input type="date" class="form-control" id="end_date" name="end_date" ng-model="package.end_date">
+        <input type="date" class="form-control" id="end_date" name="end_date" ng-model="package.end_date" required>
       <br>
 
       <label for="dt">Ending Time:</label>
-        <input type="time" class="form-control" id="end_time" name="end_time" value="00:00" ng-model="package.end_time">
+        <input type="time" class="form-control" id="end_time" name="end_time" value="00:00" ng-model="package.end_time" required>
       <br>
         <div class="form-group">
             <label for="price">Price: </label>
-            <input ng-model="package.price" type="number" class="form-control" min="0" id="price" name="price" value="0">
+            <input ng-model="package.price" type="number" class="form-control" min="0" id="price" name="price" value="0" required>
         </div>
         <div class="form-group">
             <div class="form-group">
                 <label for="title">Travel Package Name</label>
-                <input ng-model="package.title" type="text" class="form-control" name="title" id="title" placeholder="Enter Package Name" id="title"></input>
+                <input ng-model="package.title" type="text" class="form-control" name="title" id="title" placeholder="Enter Package Name" id="title" required></input>
               </div>
         
         </div>
 
         <div class="form-group">
           <label for="description">Description: </label>
-          <input ng-model="package.description" type="text" min="0" class="form-control" id="description" name="description" placeholder="Let your customer know how awesome the tour package is!">
+          <input ng-model="package.description" type="text" min="0" class="form-control" id="description" name="description" placeholder="Let your customer know how awesome the tour package is!" required>
       </div>
 
         <div class="form-group">
           <label for="duration">Duration: </label>
-          <input ng-model="package.duration" type="text" min="0" class="form-control" value="will be calculated automatically" id="duration" name="duration" disabled>
+          <input type="text" min="0" class="form-control" value="will be calculated automatically" id="duration" name="duration" disabled>
       </div>
        
         <div class="form-group">
           <label for="age_min">Age Lower Limit: </label>
-          <input ng-model="package.age_min" type="number" min="0" max="18" class="form-control" id="age_min" value="10" name="age_min">
+          <input ng-model="package.age_min" type="number" min="0" max="18" class="form-control" id="age_min" value="10" name="age_min" required>
       </div>
 
       <div class="form-group">
         <label for="age_max">Age Upper Limit: </label>
-        <input ng-model="package.age_max" type="number" min="30" max="100" class="form-control" id="age_max" value="90" name="age_max">
+        <input required ng-model="package.age_max" type="number" min="30" max="100" class="form-control" id="age_max" value="90" name="age_max">
     </div>
 
     <div class="form-group">
           <label for="availability">Availability: </label>
-          <input ng-model="package.availability" type="number" min="0" max="1000" class="form-control" id="availability" value="150" name="availability">
+          <input ng-model="package.availability" type="number" min="0" max="1000" class="form-control" id="availability" value="150" name="availability" required>
       </div>
 
       <div class="form-group">
         <label for="location">Location: </label>
-        <input ng-model="package.location" type="text" class="form-control" id="location" placeholder="eg) Chennai, Paris, etc" name="location">
+        <input ng-model="package.location" type="text" class="form-control" id="location" placeholder="eg) Chennai, Paris, etc" name="location" required>
     </div>
 
     <div class="form-group">
       <label for="international">Type: </label>
-      <select name="international" id="international" class="form-control" ng-model="package.international">
+      <select name="international" id="international" class="form-control" ng-model="package.international" required>
         <option name="international" value=true>International</option>
         <option name="international" value=false>Domestic</option>
       </select>
@@ -221,20 +220,22 @@
     addTourPackage.controller(
       "addTourPackageController",
       function ($scope,$http,$templateCache){
+
         $scope.package = {
-          title: "",
-          description: "",
+          
+          title: "The Generic Package",
+          description: "Enter a Generic Description",
           start_date: "",
-          start_time: "",
+          start_time: "00:00",
           end_date: "",
-          end_time: "",
-          location: "",
-          international: "",
-          availability: null,
+          end_time: "12:00",
+          location: "Enter place",
+          international: "Domestic",
+          availability: 100,
           duration: null,
-          age_max: null,
-          age_min: null,
-          price: null,
+          age_max: 90,
+          age_min: 2,
+          price: 1000,
           toSend: {},
 
           save: function(){
