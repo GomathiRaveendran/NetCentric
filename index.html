@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <title> ABC TOURISM </title>
+</head>
+<body ng-app="showProduct" ng-controller="showProductController" >
+    <!-- HEADER -->
+    <header id="header">
+        <h2 class="header-content text-dark">ABC TRAVELS</h2>
+    </header>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom mb-2">
+      <a class="navbar-brand " href="http://localhost:1212/" style="font-family: fantasy;">ABC</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="http://localhost:1212/readdata">Home<span class="sr-only"></a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/managerpanel">Tour Packages<span class="sr-only"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/addpackage">Add Package (Managers)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/domestic">Domestic Tour Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/international">International Tour Packages</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:1212/bookticket">Book A Trip</a>
+            </li>
+          
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:1212/feedback">Feedback</a>
+            </li>
+
+        </ul>
+
+        <div class="my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:1212/login">Login<span class="sr-only"></a>
+                </li>    
+                <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:1212/signup">Sign Up<span class="sr-only"></a>
+                </li>  
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+    <div class="container">
+        
+        <div class="row">
+          <div class="col-2 bg-white">
+            <article class="h5 text-muted pt-5 pb-2" style="text-align: center;">
+                One of the leading travel and tourist agencies in Amrita.
+            </article >
+          </div>
+          
+          <div class="col-7 bg-white ml-1 mr-1 p-3">
+                    <h2 class="header-content" style="border-bottom: solid ; border-color:rgba(0, 0, 0, 0.025);"> Our Popular Packages </h2>
+                <div class="products">
+                    
+                    <div class="tab-content m-3" id="myTabContent">
+                        
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card"> <img src="./media/carousel3.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Bahamas</span> <span > ₹15,500</span> </div>
+                                        <p class="h6 card-text mb-1 mt-1">Enjoy the sunny beaches of Bahamas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card"> <img src="./media/carousel2.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Sahara</span> <span > ₹15,500</span> </div>
+                                        <p class="h6 card-text mb-1 mt-1">Enjoy the sandy deserts of Sahara</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card"> <img src="./media/carousel1.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Western Ghats</span> <span> ₹15,500</span> </div>
+                                        <p class="h6 card-text mb-1 mt-1">Enjoy the wilderness of Western Ghats</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="tab-content m-3" id="myTabContent">
+                        
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card"> <img src="./media/carousel3.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Bahamas</span> <span > ₹15,500</span> </div>
+                                        <p class="h6 card-text mb-1 mt-1">Enjoy the sunny beaches of Bahamas</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card"> <img src="./media/carousel2.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Sahara</span> <span > ₹15,500</span> </div>
+                                        <p class="h6 card-text mb-1 mt-1">Enjoy the sandy deserts of Sahara</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card"> <img src="./media/carousel1.jpg" class="card-img-top">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between"> <span class="font-weight-bold">Western Ghats</span> <span> ₹15,500</span> </div>
+                                        <p class="h6 card-text mb-1 mt-1">Enjoy the wilderness of Western Ghats</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            
+                        </div>
+                        
+                    </div>
+                
+                </div>
+                
+
+
+            </div>
+          
+            <div class="col-2 bg-white pb-3">
+                <p class="h5 text-muted pt-5 pb-2">
+                    "ABC Travels made our trip so much more easier" 
+                    <br> - Random Guy
+                </p>
+
+                <p class="h5 text-muted pt-5 pb-2">
+                    "We owe our life to ABC Travels" 
+                    <br> - Random Lady
+                </p>
+
+                <p class="h5 text-muted pt-5 pb-2">
+                    "ABC Travels donated my grandma's kidneys in Columbia. She was cool with it tho." 
+                    <br> - Random Guy #2
+                </p>
+            </div>
+    </div>  
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted mt-5">
+
+    <!-- Section: Links  -->
+    <section class="p-4 border-bottom navbar-custom">
+      <div class="container text-center text-md-start mt-3">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-3">
+              <i class="fas fa-gem me-3 text-grayish"></i>ABC TOURISM
+            </h6>
+            <p>
+              Making tourism easier since 2022. 
+              <br>
+              Like, 2 days ago. From the hands of a stressed out college student.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-2">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Indian</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">International</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Cruise</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Short Trips</a>
+            </p>
+          </div>
+          
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p>Ettimadai, TN 00000, INDIA</p>
+            <p>
+              info@example.com
+            </p>
+            <p> + 91 234 567 88</p>
+            <p> + 91 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.025);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="http://localhost:1212/">ABCTravels.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <script> 
+
+    var showProduct = angular.module("showProduct",[]);
+    showProduct.config([
+      "$httpProvider",
+      function ($httpProvider){
+        $httpProvider.defaults.useXDomain =  true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+      },
+
+    ]);
+
+    showProduct.controller(
+      "showProductController",
+      function ($scope,$http,$templateCache){
+        $scope.records 
+        $scope.package = {
+          title: "",
+          description: "",
+          start_date: "",
+          start_time: "",
+          end_date: "",
+          end_time: "",
+          location: "",
+          international: "",
+          availability: null,
+          duration: null,
+          age_max: null,
+          age_min: null,
+          price: null,
+          toSend: {},
+          
+        listFlights: function () {
+            var url = "http://localhost:1212/readdata";
+            $http.get(url).then(function (response) {
+              console.log(response.data);
+              $scope.records = response.data;
+            });
+          },
+
+         }
+
+        $scope.package.listFlights();
+      }
+    );
+
+
+    function redirect() {
+      window.location = "http://localhost:1212/recorded";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="style.css">
+    <title>FEEDBACK - ABC TRAVEL AGENCY</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <h2 class="header-content text-dark">ABC TRAVELS</h2>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom mb-2">
+  <a class="navbar-brand " href="http://localhost:1212/" style="font-family: fantasy;">ABC</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:1212/readdata">Home<span class="sr-only"></a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:1212/managerpanel">Tour Packages<span class="sr-only"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:1212/addpackage">Add Package (Managers)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:1212/domestic">Domestic Tour Packages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:1212/international">International Tour Packages</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="http://localhost:1212/bookticket">Book A Trip</a>
+        </li>
+      
+      <li class="nav-item">
+          <a class="nav-link" href="http://localhost:1212/feedback">Feedback</a>
+        </li>
+
+    </ul>
+
+    <div class="my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:1212/login">Login<span class="sr-only"></a>
+            </li>    
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:1212/signup">Sign Up<span class="sr-only"></a>
+            </li>  
+        </ul>
+    </div>
+  </div>
+</nav>
+  <!-- HEADER -->
+    <form id="form">
+        <hgroup><h2 class="heading"> How was the trip? </h2></hgroup>
+        <div class="rating">
+            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+          </div>
+        <div class="form-group" style="margin: 0 auto;">
+           <h3 style="text-align: center;"> <label for="feedback">Your comments/feedbacks: </label> </h3>
+
+            <br>
+            <textarea name="feedback" placeholder="How can we improve? Anything you liked/disliked in the trip?" style="margin-left: 5vw; width: 35vw;"></textarea>
+        </div>
+        <br>
+          <button type="submit" class="btn btn-primary" style="margin-top: 2vh; margin-left: 20vw;">Submit</button>
+
+        </form>
+  <!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted mt-5">
+
+  <!-- Section: Links  -->
+  <section class="p-4 border-bottom navbar-custom">
+    <div class="container text-center text-md-start mt-3">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-3">
+            <i class="fas fa-gem me-3 text-grayish"></i>ABC TOURISM
+          </h6>
+          <p>
+            Making tourism easier since 2022. 
+            <br>
+            Like, 2 days ago. From the hands of a stressed out college student.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-2">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Indian</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">International</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Cruise</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Short Trips</a>
+          </p>
+        </div>
+        
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p>Ettimadai, TN 00000, INDIA</p>
+          <p>
+            info@example.com
+          </p>
+          <p> + 91 234 567 88</p>
+          <p> + 91 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="index.html">ABCTravels.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+</body>
+
+</html>
+
+
+<!-- 
+
+
+    <h1>How was the trip for you?</h1>
+
+
+    
+
+ -->

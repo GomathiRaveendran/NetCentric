@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <title> ABC TOURISM </title>
+</head>
+<body ng-app="showProduct" ng-controller="showProductController" >
+    <!-- HEADER -->
+    <header id="header">
+        <h2 class="header-content text-dark">ABC TRAVELS</h2>
+    </header>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom mb-2">
+      <a class="navbar-brand " href="http://localhost:1212/" style="font-family: fantasy;">ABC</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="http://localhost:1212/readdata">Home<span class="sr-only"></a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/managerpanel">Tour Packages<span class="sr-only"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/addpackage">Add Package (Managers)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/domestic">Domestic Tour Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:1212/international">International Tour Packages</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:1212/bookticket">Book A Trip</a>
+            </li>
+          
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:1212/feedback">Feedback</a>
+            </li>
+
+        </ul>
+
+        <div class="my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:1212/login">Login<span class="sr-only"></a>
+                </li>    
+                <li class="nav-item">
+                  <a class="nav-link" href="http://localhost:1212/signup">Sign Up<span class="sr-only"></a>
+                </li>  
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+
+      <div class="container">
+        
+        <div class="row">
+          
+          <div class="col-12 bg-white ml-1 mr-1 p-3">
+            <h2 class="header-content" style="border-bottom: solid ; border-color:rgba(0, 0, 0, 0.025);"> Our Popular Packages </h2>
+        <div class="products">
+
+            <div class="tab-content m-3" id="myTabContent">
+
+              
+
+                <table ng-controller="showProductController" class="table">
+                    <tr>
+                        <td>Title</td>
+                        <td>Description</td>
+
+                        <td>Location</td>   
+                        <td>Price</td>
+                        <td>Duration</td>
+                        <td>Availability</td>
+                    </tr>
+                    <tr ng-repeat="x in records">
+                        <td>{{x.title}}</td>
+                        <td>{{x.description}}</td>
+                        <td>{{x.location}}</td>
+                        <td>{{x.price}}</td>
+                        <td>{{x.duration}}</td>
+                        <td>{{x.availability}}</td>
+                        
+                      
+                    </tr>
+
+                </table>
+
+                <table class="table">
+                  <tr>
+                    <!-- <td>
+                      <form id="filter" style="width: fit-content; text-align: center;">
+                        <label ><h3>Filter</h3></label>
+                        <label for="type">Filter by Type</label>
+                        <select name="type" id="type">
+                            <option value="all" ng-model="package.type">All</option>
+                            <option value="international" ng-model="package.type">Internation</option>
+                            <option value="domestic" ng-model="package.type">Domestic</option>
+                        </select>
+
+                        <button ng-click="package.filter()" class="button" style=" border:none; background-color:rgba(115, 255, 255, 0.5);  ">submit</button>
+                      </form>
+                    </td> -->
+                    <td>
+
+                      <form id="mod" style="width: fit-content; text-align: center;">
+                        <label for="title" ><h3>Modify</h3></label>
+                        <input type="text" name="oldtitle" id="oldtitle" class="form-control" ng-model="package.oldtitle" placeholder="enter an existing package name">
+                        
+                        <br>
+                        <input type="text" name="title" ng-model="package.title" class="form-control" placeholder="Enter new title">
+                        <br>
+                        <button ng-click="package.modify()" class="button" style=" border:none; background-color:rgba(115, 255, 255, 0.5);  ">submit</button>
+                      </form>
+      
+
+                    </td>
+
+                    <td>
+                      <form id="add" style="width: fit-content; text-align:center;padding: 2vw 5vw;">
+                        <label for="add" ><h3>Add</h3></label>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="button" style=" border:none; background-color:rgba(115, 255, 255, 0.5);  padding: 1.2vh;"><a href="addpackage.html" style="text-decoration: none; color: black;">Click Here</a></button>
+                      <br>
+                      <br>
+                      
+                      </form>
+                    </td>
+
+                    <td>
+                      <form id="del" style="width: fit-content; text-align:center;">
+                        <label for="titledelete" ><h3>Delete</h3></label>
+                        <br><br>
+                        <input type="text" name="titledelete" id="titledelete" class="form-control" ng-model="package.titledelete" placeholder="enter an existing package name">
+                        
+                        <br><br>
+                        <button ng-click="package.delete()" class="button" style=" border:none; background-color:rgba(115, 255, 255, 0.5);  ">submit</button>
+                      <br>
+                      </form>
+                    </td>
+                  </tr>
+                </table>
+
+            
+                </div>
+            </div>
+        </div>
+    </div>
+          
+            
+    </div>    
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted mt-5">
+
+    <!-- Section: Links  -->
+    <section class="p-4 border-bottom navbar-custom">
+      <div class="container text-center text-md-start mt-3">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-3">
+              <i class="fas fa-gem me-3 text-grayish"></i>ABC TOURISM
+            </h6>
+            <p>
+              Making tourism easier since 2022. 
+              <br>
+              Like, 2 days ago. From the hands of a stressed out college student.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-2">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Indian</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">International</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Cruise</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Short Trips</a>
+            </p>
+          </div>
+          
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p>Ettimadai, TN 00000, INDIA</p>
+            <p>
+              info@example.com
+            </p>
+            <p> + 91 234 567 88</p>
+            <p> + 91 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.025);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="index.html">ABCTravels.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <script> 
+
+    var showProduct = angular.module("showProduct",[]);
+    showProduct.config([
+      "$httpProvider",
+      function ($httpProvider){
+        $httpProvider.defaults.useXDomain =  true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+      },
+
+    ]);
+
+    showProduct.controller(
+      "showProductController",
+      function ($scope,$http,$templateCache){
+        $scope.$apply((res) => {
+  
+        // To update name on rootScope 
+        // forcefully, use $apply function
+        $scope.package.filter();
+        }),
+
+        $scope.records 
+        $scope.package = {
+          title: "",
+          oldtitle: "",
+          titledelete: "",
+          type: "all",
+          toSend: {},
+          
+          listproducts: function () {
+            var url = "http://localhost:1212/readdata";
+            $http.get(url).then(function (response) {
+              console.log(response.data);
+              $scope.records = response.data;
+            });
+          },
+
+          modify: function () {
+            var method = "POST";
+            var inserturl = "http://localhost:1212/updatedata";
+            var packageObj = $scope.package;
+            packageObj.toSend = {
+                oldtitle: packageObj.oldtitle,
+                title: packageObj.title
+              };
+            console.log(packageObj.toSend);
+            var toSendString = JSON.stringify(packageObj.toSend);
+              $http.post(inserturl, toSendString).then(function (response){
+              console.log(response);
+              if (response.status == 200){
+                console.log("success");
+                window.location.reload();
+
+              } else {
+                console.log("error");
+                alert("Error while saving");
+              }
+            })
+
+          //----------
+          },
+
+          delete: function() {
+            var method = "POST";
+            var inserturl = "http://localhost:1212/deletedata";
+            var packageObj = $scope.package;
+            packageObj.toSend = {
+                titledelete: packageObj.titledelete
+              };
+            console.log(packageObj.toSend);
+            var toSendString = JSON.stringify(packageObj.toSend);
+              $http.post(inserturl, toSendString).then(function (response){
+              console.log(response);
+              if (response.status == 200){
+                console.log("success");
+                window.location.reload();
+
+              } else {
+                console.log("error");
+                alert("Error while saving");
+              }
+            })
+
+          },
+
+          filter: function(){
+
+            var method = "POST";
+            var inserturl = "http://localhost:1212/filterdata";
+            var packageObj = $scope.package;
+            if(packageObj.type=="all"){
+              packageObj.listproducts();
+            }
+            else{
+
+              packageObj.toSend = {
+                type: packageObj.type
+              };
+            console.log(packageObj.toSend);
+            var toSendString = JSON.stringify(packageObj.toSend);
+              $http.post(inserturl, toSendString).then(function (response){
+              console.log(response);
+              if (response.status == 200){
+                console.log(response.data);
+                $scope.records = response.data;
+                
+
+              } else {
+                console.log("error");
+                alert("Error while saving");
+              }
+            })
+
+            }
+
+          }
+
+         }
+
+
+        $scope.package.filter();
+      }
+    );
+
+
+    function redirect() {
+      window.location = "thankyou.html";
+    }
+
+    function why(e){
+      console.log(e.value);
+      console.log(e.innerHTML);
+    }
+  </script>
+
+</body>
+</html>
